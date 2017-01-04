@@ -7,7 +7,6 @@
 #include <string>
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <unistd.h>
 
 #define	ERROR	0
 #define	EMPTY	' '

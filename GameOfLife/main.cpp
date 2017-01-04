@@ -3,7 +3,7 @@
 
 int	main(int ac, char** av)
 {
-  GameOfLife	gol(av[1]);
+	GameOfLife	gol("./golMap/GosperGliderGun.gol");
   int i = 0;
   int a;
   bool		test;
