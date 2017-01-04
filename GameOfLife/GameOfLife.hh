@@ -36,7 +36,7 @@ public:
   unsigned int	GetWidth() { return (this->p_width); }
   unsigned int	GetHeight() { return (this->p_height); }
   unsigned int	GetArea() { return (this->p_area); }
-  char*		GetEarht() { return (this->p_earth); }
+  char*		GetEarth() { return (this->p_earth); }
 
 public:
   bool		Generate();
