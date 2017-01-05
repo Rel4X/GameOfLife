@@ -1,6 +1,6 @@
 #pragma once
 
-/* Version 1.0 */
+/* Version 1.1 */
 
 #include	<random>
 #include	<ctime>
