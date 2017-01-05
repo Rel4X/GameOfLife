@@ -11,6 +11,19 @@ GameOfLife::GameOfLife(const char* fname) :
   this->p_ready_to_go = true;
 }
 
+GameOfLife::GameOfLife(char* map, unsigned int x, unsigned int y) :
+	p_ready_to_go(false), p_earth(0x0), p_future(0x0)
+{
+	if (map == 0x0) { return; }
+	if (x < 2 || y < 2) { return; }
+	this->p_width = x;
+	this->p_height = y;
+	this->p_area = x * y;
+	this->p_earth = map;
+	this->p_future = new char[this->p_area]();
+	this->p_ready_to_go = true;
+}
+
 GameOfLife::~GameOfLife()
 {
   if (this->p_earth != 0x0)
@@ -22,6 +35,7 @@ GameOfLife::~GameOfLife()
 bool		GameOfLife::Generate()
 {
   if (this->p_earth == 0x0) { return (false); }
+  if (this->p_future == 0x0) { return (false); }
 
   unsigned int	x;
   unsigned int	y;
@@ -69,7 +83,7 @@ unsigned int	GameOfLife::GetNeighbors(unsigned int x, unsigned int y)
   return (nb);
 }
 
-char		GameOfLife::GetCell(unsigned int x, unsigned int y)
+char		GameOfLife::GetCell(unsigned int x, unsigned int y) const
 {
   if (this->p_earth == 0x0) { return (ERROR); }
   if (this->p_ready_to_go == false) { return (ERROR); }
